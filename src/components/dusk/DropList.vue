@@ -130,11 +130,19 @@ export default {
             }
             return returnStr;
         },
+        /**
+         * 
+         * @param data {Map<string, Map<string, Map<string, {S: boolean; A: boolean; B: boolean;}>>>}
+         */
         parseList(data){
             if(this.list == 'normal') this.normalParse(data);
             else if(this.list == 'wikia') this.wikiaParse(data);
             else if(this.list == 'markdown') this.markdownParse(data);
         },
+        /**
+         * 
+         * @param data {Map<string, Map<string, Map<string, {S: boolean; A: boolean; B: boolean;}>>>}
+         */
         normalParse(data){
             if(this.map.split('-')[0] > 10) data = this.eventFilter(data);
             let list = {};
@@ -197,6 +205,10 @@ export default {
 
             return returnStr;
         },
+        /**
+         * 
+         * @param data {Map<string, Map<string, Map<string, {S: boolean; A: boolean; B: boolean;}>>>}
+         */
         wikiaParse(data){
             if(this.map.split('-')[0] > 10) data = this.eventFilter(data);
             let list = {};
@@ -275,6 +287,10 @@ export default {
             if(data.B) returnStr += 'B';
             return returnStr;
         },
+        /**
+         * 
+         * @param data {Map<string, Map<string, Map<string, {S: boolean; A: boolean; B: boolean;}>>>}
+         */
         markdownParse(data){
             let columns = 1;
             if(this.map.split('-')[0] > 10) data = this.eventFilter(data);

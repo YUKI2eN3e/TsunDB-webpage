@@ -134,6 +134,11 @@ export default {
                 return (this.equipData[id][lang] == '' || this.equipData[id][lang] == undefined) ? this.equipData[id]['jp'] : this.equipData[id][lang]; 
             } 
         },
+        /**
+         * 
+         * @param data {Array<{map: string; difficulty: number; rewards: Array<{api_type: number; api_id: number; api_value: number;}>; version: null|Any; datetime: datetime; origin: null|Any; selectreward: null|Any;}>}
+         * @param lang {'en' | 'jp'}
+         */
         normalParse(data, lang){
             let newObj = {};
             for(const x of data){
